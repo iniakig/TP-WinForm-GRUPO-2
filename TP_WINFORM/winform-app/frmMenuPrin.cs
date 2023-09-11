@@ -17,14 +17,5 @@ namespace winform_app
         {
             InitializeComponent();
         }
-
-        private void frmMenuPrinc_Load(object sender, EventArgs e)
-        {
-            Categoria nueva = new Categoria();
-
-            nueva.Descripcion = "Total";
-            MessageBox.Show(nueva.ToString());
-          
-        }
     }
 }

@@ -39,7 +39,6 @@ namespace winform_app
             this.ClientSize = new System.Drawing.Size(595, 606);
             this.Name = "frmMenuPrinc";
             this.Text = "Gestión Catálogo";
-            this.Load += new System.EventHandler(this.frmMenuPrinc_Load);
             this.ResumeLayout(false);
 
         }
