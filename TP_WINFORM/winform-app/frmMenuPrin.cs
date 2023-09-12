@@ -17,5 +17,11 @@ namespace winform_app
         {
             InitializeComponent();
         }
+
+        private void pbxCategorias_Click(object sender, EventArgs e)
+        {
+            frmCategorias ventanaCategorias = new frmCategorias();
+            ventanaCategorias.Show();
+        }
     }
 }
