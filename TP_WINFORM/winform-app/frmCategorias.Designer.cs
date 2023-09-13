@@ -43,18 +43,24 @@
             this.lblTituloPrincipal.AutoSize = true;
             this.lblTituloPrincipal.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloPrincipal.ForeColor = System.Drawing.Color.Black;
-            this.lblTituloPrincipal.Location = new System.Drawing.Point(49, 23);
+            this.lblTituloPrincipal.Location = new System.Drawing.Point(65, 28);
+            this.lblTituloPrincipal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTituloPrincipal.Name = "lblTituloPrincipal";
-            this.lblTituloPrincipal.Size = new System.Drawing.Size(268, 65);
+            this.lblTituloPrincipal.Size = new System.Drawing.Size(332, 81);
             this.lblTituloPrincipal.TabIndex = 1;
             this.lblTituloPrincipal.Text = "Categorías";
             // 
             // dgvCategorias
             // 
             this.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCategorias.Location = new System.Drawing.Point(60, 125);
+            this.dgvCategorias.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvCategorias.Location = new System.Drawing.Point(80, 154);
+            this.dgvCategorias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvCategorias.MultiSelect = false;
             this.dgvCategorias.Name = "dgvCategorias";
-            this.dgvCategorias.Size = new System.Drawing.Size(432, 412);
+            this.dgvCategorias.RowHeadersWidth = 51;
+            this.dgvCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCategorias.Size = new System.Drawing.Size(576, 507);
             this.dgvCategorias.TabIndex = 2;
             // 
             // lblAgregarCategoria
@@ -62,50 +68,55 @@
             this.lblAgregarCategoria.AutoSize = true;
             this.lblAgregarCategoria.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAgregarCategoria.ForeColor = System.Drawing.Color.Black;
-            this.lblAgregarCategoria.Location = new System.Drawing.Point(516, 123);
+            this.lblAgregarCategoria.Location = new System.Drawing.Point(688, 151);
+            this.lblAgregarCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAgregarCategoria.Name = "lblAgregarCategoria";
-            this.lblAgregarCategoria.Size = new System.Drawing.Size(88, 28);
+            this.lblAgregarCategoria.Size = new System.Drawing.Size(110, 35);
             this.lblAgregarCategoria.TabIndex = 3;
             this.lblAgregarCategoria.Text = "Agregar";
             // 
             // txtAgregarCategoria
             // 
-            this.txtAgregarCategoria.Location = new System.Drawing.Point(520, 159);
+            this.txtAgregarCategoria.Location = new System.Drawing.Point(693, 196);
+            this.txtAgregarCategoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAgregarCategoria.Name = "txtAgregarCategoria";
-            this.txtAgregarCategoria.Size = new System.Drawing.Size(202, 20);
+            this.txtAgregarCategoria.Size = new System.Drawing.Size(268, 22);
             this.txtAgregarCategoria.TabIndex = 4;
             // 
             // btnGuardarCategoria
             // 
-            this.btnGuardarCategoria.Location = new System.Drawing.Point(728, 157);
+            this.btnGuardarCategoria.Location = new System.Drawing.Point(971, 193);
+            this.btnGuardarCategoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGuardarCategoria.Name = "btnGuardarCategoria";
-            this.btnGuardarCategoria.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarCategoria.Size = new System.Drawing.Size(100, 28);
             this.btnGuardarCategoria.TabIndex = 6;
             this.btnGuardarCategoria.Text = "Guardar";
             this.btnGuardarCategoria.UseVisualStyleBackColor = true;
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(520, 54);
+            this.txtBuscar.Location = new System.Drawing.Point(693, 66);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(202, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(268, 22);
             this.txtBuscar.TabIndex = 8;
             this.txtBuscar.Tag = "";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(729, 52);
+            this.button1.Location = new System.Drawing.Point(972, 64);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 9;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // frmCategorias
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(825, 590);
+            this.ClientSize = new System.Drawing.Size(1100, 726);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnGuardarCategoria);
@@ -113,7 +124,9 @@
             this.Controls.Add(this.lblAgregarCategoria);
             this.Controls.Add(this.dgvCategorias);
             this.Controls.Add(this.lblTituloPrincipal);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmCategorias";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de categorías";
             this.Load += new System.EventHandler(this.frmCategorias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();

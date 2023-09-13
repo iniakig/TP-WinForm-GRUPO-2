@@ -21,7 +21,13 @@ namespace winform_app
         private void pbxCategorias_Click(object sender, EventArgs e)
         {
             frmCategorias ventanaCategorias = new frmCategorias();
-            ventanaCategorias.Show();
+            ventanaCategorias.ShowDialog();
+        }
+
+        private void pbxMarcas_Click(object sender, EventArgs e)
+        {
+            frmMarcas ventanaMarcas = new frmMarcas();
+            ventanaMarcas.ShowDialog();
         }
     }
 }

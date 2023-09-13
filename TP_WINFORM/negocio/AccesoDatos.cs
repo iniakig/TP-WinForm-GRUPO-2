@@ -23,9 +23,9 @@ namespace negocio
         {
 
             // Conexión Nahue
-            conexion = new SqlConnection("server=localhost; database=CATALOGO_P3_DB; integrated security=false; User ID=sa; Password=Outatimerun1985");
+            //conexion = new SqlConnection("server=localhost; database=CATALOGO_P3_DB; integrated security=false; User ID=sa; Password=Outatimerun1985");
             // Conexión Iña
-            //conexion = new SqlConnection("server=; database=CATALOGO_P3_DB; integrated security=false; User ID=; Password=");
+            conexion = new SqlConnection("server=localhost; database=CATALOGO_P3_DB; integrated security=false; User ID=sa; Password=Gloria3279");
             comando = new SqlCommand();
         }
 
