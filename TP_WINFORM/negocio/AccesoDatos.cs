@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -49,6 +50,21 @@ namespace negocio
             }
         }
 
+        public void EjecutarAccion()
+        {
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public void CerrarConexion()
         {
             if (lector != null)
@@ -57,5 +73,7 @@ namespace negocio
             }
             conexion.Close();
         }
+
+
     }
 }
