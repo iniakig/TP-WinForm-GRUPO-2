@@ -22,19 +22,32 @@ namespace winform_app
 
         private void frmCategorias_Load(object sender, EventArgs e)
         {
-            CategoriaNegocio categoria = new negocio.CategoriaNegocio();
-            listaCategoria = categoria.Listar();
-            dgvCategorias.DataSource = listaCategoria;
+            CargarVista();
+        }
+
+        private void CargarVista()
+        {
+            try
+            {
+                CategoriaNegocio categoria = new negocio.CategoriaNegocio();
+                listaCategoria = categoria.Listar();
+                dgvCategorias.DataSource = listaCategoria;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btnGuardarCategoria_Click(object sender, EventArgs e)
         {
-            if(txtAgregarCategoria.Text != "")
+            if (txtAgregarCategoria.Text != "")
             {
                 CategoriaNegocio negocio = new CategoriaNegocio();
                 Categoria nuevaCategoria = new Categoria();
 
-                if(txtAgregarCategoria.Text != "")
+                if (txtAgregarCategoria.Text != "")
                 {
                     try
                     {
@@ -62,8 +75,8 @@ namespace winform_app
             try
             {
                 seleccionada = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
-                DialogResult respuesta = MessageBox.Show("¿Querés eliminar categoía:" + seleccionada.Descripcion +"?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if(respuesta == DialogResult.Yes)
+                DialogResult respuesta = MessageBox.Show("¿Querés eliminar categoía:" + seleccionada.Descripcion + "?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
                 {
                     negocio.Eliminar(seleccionada.Id);
                     listaCategoria = negocio.Listar();
@@ -74,6 +87,43 @@ namespace winform_app
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Categoria seleccionada;
+
+            try
+            {
+                seleccionada = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
+                
+                frmModificarCategoria frmModificarCategoria = new frmModificarCategoria(seleccionada);
+                frmModificarCategoria.ShowDialog();
+                CargarVista();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void dgvCategorias_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dgvCategorias.Rows[e.RowIndex];
+
+                Categoria categoria = new Categoria();
+                categoria.Id = (int)selectedRow.Cells[0].Value;
+                categoria.Descripcion = selectedRow.Cells[1].Value.ToString();
+
+                if (categoria != null)
+                {
+                    frmModificarCategoria frmModificarCategoria = new frmModificarCategoria(categoria);
+                    frmModificarCategoria.ShowDialog();
+                    CargarVista();
+                }
             }
         }
     }
