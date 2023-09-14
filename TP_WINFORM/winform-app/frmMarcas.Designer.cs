@@ -37,6 +37,7 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.lblOtrasAcciones = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,9 +72,9 @@
             this.lblAgregarMarca.ForeColor = System.Drawing.Color.Black;
             this.lblAgregarMarca.Location = new System.Drawing.Point(516, 123);
             this.lblAgregarMarca.Name = "lblAgregarMarca";
-            this.lblAgregarMarca.Size = new System.Drawing.Size(88, 28);
+            this.lblAgregarMarca.Size = new System.Drawing.Size(152, 28);
             this.lblAgregarMarca.TabIndex = 3;
-            this.lblAgregarMarca.Text = "Agregar";
+            this.lblAgregarMarca.Text = "Agregar marca";
             // 
             // txtAgregarMarca
             // 
@@ -111,7 +112,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(521, 195);
+            this.btnEliminar.Location = new System.Drawing.Point(602, 234);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 10;
@@ -121,7 +122,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(728, 195);
+            this.btnModificar.Location = new System.Drawing.Point(521, 234);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 11;
@@ -129,11 +130,23 @@
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
+            // lblOtrasAcciones
+            // 
+            this.lblOtrasAcciones.AutoSize = true;
+            this.lblOtrasAcciones.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOtrasAcciones.ForeColor = System.Drawing.Color.Black;
+            this.lblOtrasAcciones.Location = new System.Drawing.Point(516, 197);
+            this.lblOtrasAcciones.Name = "lblOtrasAcciones";
+            this.lblOtrasAcciones.Size = new System.Drawing.Size(153, 28);
+            this.lblOtrasAcciones.TabIndex = 13;
+            this.lblOtrasAcciones.Text = "Otras Acciones";
+            // 
             // frmMarcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(825, 590);
+            this.Controls.Add(this.lblOtrasAcciones);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnBuscar);
@@ -164,5 +177,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Label lblOtrasAcciones;
     }
 }
