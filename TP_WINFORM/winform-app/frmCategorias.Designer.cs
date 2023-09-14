@@ -55,7 +55,7 @@
             this.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategorias.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvCategorias.Location = new System.Drawing.Point(80, 154);
-            this.dgvCategorias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvCategorias.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCategorias.MultiSelect = false;
             this.dgvCategorias.Name = "dgvCategorias";
             this.dgvCategorias.RowHeadersWidth = 51;
@@ -78,7 +78,7 @@
             // txtAgregarCategoria
             // 
             this.txtAgregarCategoria.Location = new System.Drawing.Point(693, 196);
-            this.txtAgregarCategoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAgregarCategoria.Margin = new System.Windows.Forms.Padding(4);
             this.txtAgregarCategoria.Name = "txtAgregarCategoria";
             this.txtAgregarCategoria.Size = new System.Drawing.Size(268, 22);
             this.txtAgregarCategoria.TabIndex = 4;
@@ -86,17 +86,18 @@
             // btnGuardarCategoria
             // 
             this.btnGuardarCategoria.Location = new System.Drawing.Point(971, 193);
-            this.btnGuardarCategoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardarCategoria.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardarCategoria.Name = "btnGuardarCategoria";
             this.btnGuardarCategoria.Size = new System.Drawing.Size(100, 28);
             this.btnGuardarCategoria.TabIndex = 6;
             this.btnGuardarCategoria.Text = "Guardar";
             this.btnGuardarCategoria.UseVisualStyleBackColor = true;
+            this.btnGuardarCategoria.Click += new System.EventHandler(this.btnGuardarCategoria_Click);
             // 
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(693, 66);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(268, 22);
             this.txtBuscar.TabIndex = 8;
@@ -105,7 +106,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(972, 64);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 9;
@@ -124,7 +125,7 @@
             this.Controls.Add(this.lblAgregarCategoria);
             this.Controls.Add(this.dgvCategorias);
             this.Controls.Add(this.lblTituloPrincipal);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCategorias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de categorías";
