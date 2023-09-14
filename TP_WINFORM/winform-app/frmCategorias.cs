@@ -53,5 +53,28 @@ namespace winform_app
 
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            CategoriaNegocio negocio = new CategoriaNegocio();
+            Categoria seleccionada;
+
+            try
+            {
+                seleccionada = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
+                DialogResult respuesta = MessageBox.Show("¿Querés eliminar categoía:" + seleccionada.Descripcion +"?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(respuesta == DialogResult.Yes)
+                {
+                    negocio.Eliminar(seleccionada.Id);
+                    listaCategoria = negocio.Listar();
+                    dgvCategorias.DataSource = listaCategoria;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

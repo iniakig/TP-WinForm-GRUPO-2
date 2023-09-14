@@ -58,5 +58,28 @@ namespace negocio
                 datos.CerrarConexion();
             }
         }
+
+        public void Eliminar(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            
+            try
+            {
+
+                datos.SetearConsulta("Delete From CATEGORIAS Where Id = @id");
+                datos.setearParametro("@id", id);
+                datos.EjecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
     }
 }
