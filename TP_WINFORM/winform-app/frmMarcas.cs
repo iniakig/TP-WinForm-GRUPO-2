@@ -29,7 +29,7 @@ namespace winform_app
         {
             try
             {
-                MarcaNegocio negocio = new MarcaNegocio();
+                MarcaNegocio negocio = new negocio.MarcaNegocio();
                 listaMarcas = negocio.Listar();
                 dgvMarcas.DataSource = listaMarcas;
             }
@@ -53,8 +53,9 @@ namespace winform_app
                         nuevaMarca.Nombre = txtAgregarMarca.Text;
 
                         negocio.Agregar(nuevaMarca);
-                        MessageBox.Show("MARCA AGREGADA");
+                        MessageBox.Show("Marca " + "\"" + txtAgregarMarca.Text + "\"" + " agregada");
                         CargarVista();
+                        txtAgregarMarca.Text = "";
                     }
                     catch (Exception ex)
                     {
@@ -73,10 +74,11 @@ namespace winform_app
             try
             {
                 seleccionada = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
-                DialogResult respuesta = MessageBox.Show("¿Querés eliminar categoía:" + seleccionada.Nombre + "?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult respuesta = MessageBox.Show("¿Querés eliminar marca: " + seleccionada.Nombre + "?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (respuesta == DialogResult.Yes)
                 {
                     negocio.Eliminar(seleccionada.Id);
+                    MessageBox.Show("Marca eliminada");
                     CargarVista();
 
                 }

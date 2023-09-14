@@ -82,6 +82,7 @@
             this.Name = "frmModificarMarca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Marca";
+            this.Load += new System.EventHandler(this.frmModificarMarca_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

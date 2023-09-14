@@ -25,6 +25,10 @@ namespace winform_app
             marca = MarcaSender;
             InitializeComponent();
         }
+        private void frmModificarMarca_Load(object sender, EventArgs e)
+        {
+            CargarVista();
+        }
         
         private void CargarVista()
         {
@@ -63,5 +67,6 @@ namespace winform_app
         {
             Close();
         }
+
     }
 }
