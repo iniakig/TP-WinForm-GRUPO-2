@@ -22,9 +22,106 @@ namespace winform_app
 
         private void frmMarcas_Load(object sender, EventArgs e)
         {
+            CargarVista();
+        }
+
+        private void CargarVista()
+        {
+            try
+            {
+                MarcaNegocio negocio = new MarcaNegocio();
+                listaMarcas = negocio.Listar();
+                dgvMarcas.DataSource = listaMarcas;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        private void btnGuardarMarca_Click(object sender, EventArgs e)
+        {
+            if (txtAgregarMarca.Text != "")
+            {
+                MarcaNegocio negocio = new MarcaNegocio();
+                Marca nuevaMarca = new Marca();
+
+                if (txtAgregarMarca.Text != "")
+                {
+                    try
+                    {
+                        nuevaMarca.Nombre = txtAgregarMarca.Text;
+
+                        negocio.Agregar(nuevaMarca);
+                        MessageBox.Show("MARCA AGREGADA");
+                        CargarVista();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
+
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
             MarcaNegocio negocio = new MarcaNegocio();
-            listaMarcas = negocio.Listar();
-            dgvMarcas.DataSource = listaMarcas;
+            Marca seleccionada;
+
+            try
+            {
+                seleccionada = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+                DialogResult respuesta = MessageBox.Show("¿Querés eliminar categoía:" + seleccionada.Nombre + "?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    negocio.Eliminar(seleccionada.Id);
+                    CargarVista();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Marca seleccionada;
+
+            try
+            {
+                seleccionada = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+
+                frmModificarMarca frmModificarMarca = new frmModificarMarca(seleccionada);
+                frmModificarMarca.ShowDialog();
+                CargarVista();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void dgvMarcas_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dgvMarcas.Rows[e.RowIndex];
+
+                Marca marca = new Marca();
+                marca.Id = (int)selectedRow.Cells[0].Value;
+                marca.Nombre = selectedRow.Cells[1].Value.ToString();
+
+                if (marca != null)
+                {
+                    frmModificarMarca frmModificarMarca = new frmModificarMarca(marca);
+                    frmModificarMarca.ShowDialog();
+                    CargarVista();
+                }
+            }
         }
     }
 }

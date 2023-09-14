@@ -55,8 +55,7 @@ namespace winform_app
 
                         negocio.Agregar(nuevaCategoria);
                         MessageBox.Show("CATEGORÍA AGREGADA");
-                        listaCategoria = negocio.Listar();
-                        dgvCategorias.DataSource = listaCategoria;
+                        CargarVista();
                     }
                     catch (Exception ex)
                     {
@@ -79,8 +78,7 @@ namespace winform_app
                 if (respuesta == DialogResult.Yes)
                 {
                     negocio.Eliminar(seleccionada.Id);
-                    listaCategoria = negocio.Listar();
-                    dgvCategorias.DataSource = listaCategoria;
+                    CargarVista();
 
                 }
             }

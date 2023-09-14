@@ -64,6 +64,12 @@
     <Compile Include="frmMenuPrin.Designer.cs">
       <DependentUpon>frmMenuPrin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmModificarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarMarca.Designer.cs">
+      <DependentUpon>frmModificarMarca.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmModificarCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenuPrin.resx">
       <DependentUpon>frmMenuPrin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarMarca.resx">
+      <DependentUpon>frmModificarMarca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmModificarCategoria.resx">
       <DependentUpon>frmModificarCategoria.cs</DependentUpon>

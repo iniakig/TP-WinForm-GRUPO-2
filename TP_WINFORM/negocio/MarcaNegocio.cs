@@ -42,14 +42,14 @@ namespace negocio
             }
         }
 
-        public void Agregar(Categoria nuevaMarca)
+        public void Agregar(Marca nuevaMarca)
         {
             AccesoDatos datos = new AccesoDatos();
 
             try
             {
                 datos.SetearConsulta("Insert into MARCAS(Descripcion) values(@descripcion)");
-                datos.setearParametro("@descripcion", nuevaMarca.Descripcion);
+                datos.setearParametro("@descripcion", nuevaMarca.Nombre);
                 datos.EjecutarAccion();
             }
             catch (Exception ex)
