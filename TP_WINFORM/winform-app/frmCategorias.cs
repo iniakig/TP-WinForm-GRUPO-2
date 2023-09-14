@@ -54,8 +54,9 @@ namespace winform_app
                         nuevaCategoria.Descripcion = txtAgregarCategoria.Text;
 
                         negocio.Agregar(nuevaCategoria);
-                        MessageBox.Show("CATEGORÍA AGREGADA");
+                        MessageBox.Show("Categoría " + "\"" + txtAgregarCategoria.Text + "\"" + " agregada");
                         CargarVista();
+                        txtAgregarCategoria.Text = "";
                     }
                     catch (Exception ex)
                     {
@@ -74,10 +75,11 @@ namespace winform_app
             try
             {
                 seleccionada = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
-                DialogResult respuesta = MessageBox.Show("¿Querés eliminar categoía:" + seleccionada.Descripcion + "?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult respuesta = MessageBox.Show("¿Querés eliminar categoría: " + seleccionada.Descripcion + "?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (respuesta == DialogResult.Yes)
                 {
                     negocio.Eliminar(seleccionada.Id);
+                    MessageBox.Show("Categoría eliminada");
                     CargarVista();
 
                 }
