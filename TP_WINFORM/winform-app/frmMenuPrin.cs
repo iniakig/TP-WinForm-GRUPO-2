@@ -29,5 +29,11 @@ namespace winform_app
             frmMarcas ventanaMarcas = new frmMarcas();
             ventanaMarcas.ShowDialog();
         }
+
+        private void pbxArticulo_Click(object sender, EventArgs e)
+        {
+            frmArticulos ventanaArticulos = new frmArticulos();
+            ventanaArticulos.ShowDialog();
+        }
     }
 }
