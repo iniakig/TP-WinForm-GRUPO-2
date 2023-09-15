@@ -61,5 +61,17 @@ namespace winform_app
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            frmModificarArticulo ventanaModificarArticulo = new frmModificarArticulo();
+            ventanaModificarArticulo.ShowDialog();
+        }
+
+        private void lblAgregar_Click(object sender, EventArgs e)
+        {
+            frmAgregarArticulo ventanaAgregarArticulo = new frmAgregarArticulo();
+            ventanaAgregarArticulo.ShowDialog();
+        }
     }
 }
