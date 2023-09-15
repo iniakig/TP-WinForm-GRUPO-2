@@ -39,5 +39,27 @@ namespace winform_app
         {
             CargarVista();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            Articulo articuloSeleccionado;
+
+            try
+            {
+                articuloSeleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                DialogResult respuesta = MessageBox.Show("¿Querés eliminar artículo: " + articuloSeleccionado.Nombre + "?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(respuesta == DialogResult.Yes)
+                {
+                    negocio.Eliminar(articuloSeleccionado.Id);
+                    MessageBox.Show("Artículo eliminado");
+                    CargarVista();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }
