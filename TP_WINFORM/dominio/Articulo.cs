@@ -19,5 +19,6 @@ namespace dominio
         [DisplayName("Categoría")]
         public Categoria Categoria { get; set; }
         public decimal Precio { get; set; }
+        public string UrlImagen { get; set; }
     }
 }

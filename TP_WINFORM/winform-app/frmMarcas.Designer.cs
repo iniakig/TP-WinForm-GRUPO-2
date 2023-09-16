@@ -79,6 +79,7 @@
             // txtAgregarMarca
             // 
             this.txtAgregarMarca.Location = new System.Drawing.Point(520, 159);
+            this.txtAgregarMarca.MaxLength = 50;
             this.txtAgregarMarca.Name = "txtAgregarMarca";
             this.txtAgregarMarca.Size = new System.Drawing.Size(202, 20);
             this.txtAgregarMarca.TabIndex = 4;
@@ -96,6 +97,7 @@
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(520, 54);
+            this.txtBuscar.MaxLength = 50;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(202, 20);
             this.txtBuscar.TabIndex = 8;

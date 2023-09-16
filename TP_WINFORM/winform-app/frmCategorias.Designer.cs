@@ -79,6 +79,7 @@
             // txtAgregarCategoria
             // 
             this.txtAgregarCategoria.Location = new System.Drawing.Point(520, 159);
+            this.txtAgregarCategoria.MaxLength = 50;
             this.txtAgregarCategoria.Name = "txtAgregarCategoria";
             this.txtAgregarCategoria.Size = new System.Drawing.Size(202, 20);
             this.txtAgregarCategoria.TabIndex = 4;
@@ -96,6 +97,7 @@
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(520, 54);
+            this.txtBuscar.MaxLength = 50;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(202, 20);
             this.txtBuscar.TabIndex = 8;
