@@ -48,7 +48,7 @@ namespace winform_app
         {
             try
             {
-                if (txtDescripcion.Text == "")
+                if (txtDescripcion.Text.Trim() == "")
                 {
                     MessageBox.Show("El campo descripción no puede quedar vacío");
                 }
@@ -67,13 +67,13 @@ namespace winform_app
             }
             finally
             {
-                if (txtDescripcion.Text != "")
+                if (txtDescripcion.Text.Trim() == "")
                 {
-                    Close();
+                    CargarVista();
                 }
                 else
                 {
-                    CargarVista();
+                    Close();
                 }
             }
         }

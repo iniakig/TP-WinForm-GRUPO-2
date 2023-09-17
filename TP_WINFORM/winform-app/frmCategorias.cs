@@ -25,7 +25,7 @@ namespace winform_app
             CargarVista();
         }
 
-        private void CargarVista()
+        public void CargarVista()
         {
             try
             {

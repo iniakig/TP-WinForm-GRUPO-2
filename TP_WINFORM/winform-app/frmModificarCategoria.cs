@@ -45,7 +45,7 @@ namespace winform_app
         {
             try
             {
-                if (txtDescripcion.Text == "")
+                if (txtDescripcion.Text.Trim() == "")
                 {
                     MessageBox.Show("El campo descripción no puede quedar vacío");
                 }
@@ -54,6 +54,13 @@ namespace winform_app
                     CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
                     categoria.Descripcion = txtDescripcion.Text;
                     categoriaNegocio.Modificar(categoria);
+
+                    frmCategorias frmCategorias = Application.OpenForms["frmCategorias"] as frmCategorias;
+                    if (frmCategorias != null)
+                    {
+                        frmCategorias.CargarVista();
+                    }
+
                     MessageBox.Show("Registro modificado");
                 }
             }
@@ -64,13 +71,13 @@ namespace winform_app
             }
             finally
             {
-                if (txtDescripcion.Text != "")
+                if (txtDescripcion.Text.Trim() == "")
                 {
-                    Close();
+                    CargarVista();
                 }
                 else
                 {
-                    CargarVista();
+                    Close();
                 }
             }
         }
