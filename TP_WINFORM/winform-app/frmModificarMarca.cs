@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace winform_app
 {
@@ -47,10 +48,17 @@ namespace winform_app
         {
             try
             {
-                MarcaNegocio marcaNegocio = new MarcaNegocio();
-                Marca.Nombre = txtDescripcion.Text;
-                marcaNegocio.Modificar(Marca);
-                MessageBox.Show("Registro modificado");
+                if (txtDescripcion.Text == "")
+                {
+                    MessageBox.Show("El campo descripción no puede quedar vacío");
+                }
+                else
+                {
+                    MarcaNegocio marcaNegocio = new MarcaNegocio();
+                    Marca.Nombre = txtDescripcion.Text;
+                    marcaNegocio.Modificar(Marca);
+                    MessageBox.Show("Registro modificado");
+                }
             }
             catch (Exception ex)
             {
@@ -59,7 +67,14 @@ namespace winform_app
             }
             finally
             {
-                Close();
+                if (txtDescripcion.Text != "")
+                {
+                    Close();
+                }
+                else
+                {
+                    CargarVista();
+                }
             }
         }
 
