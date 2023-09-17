@@ -67,20 +67,26 @@ namespace winform_app
 
         private void btnImagenSiguiente_Click(object sender, EventArgs e)
         {
-            if (IndiceImagen < UrlImagenesArticulo.Count - 1)
+            if (UrlImagenesArticulo != null)
             {
-                IndiceImagen++;
+                if (IndiceImagen < UrlImagenesArticulo.Count - 1)
+                {
+                    IndiceImagen++;
+                }
+                CargarImagen();
             }
-            CargarImagen();
         }
 
         private void btnImagenAnterior_Click(object sender, EventArgs e)
         {
-            if (IndiceImagen > 0)
+            if(UrlImagenesArticulo != null)
             {
-                IndiceImagen--;
+                if (IndiceImagen > 0)
+                {
+                    IndiceImagen--;
+                }
+                CargarImagen();
             }
-            CargarImagen();
         }
     }
 }
