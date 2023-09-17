@@ -125,5 +125,23 @@ namespace winform_app
                 }
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            List<Marca> listaMarcasFiltradas;
+            string filtro = txtBuscar.Text;
+
+            if (filtro != "")
+            {
+                listaMarcasFiltradas = listaMarcas.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else
+            {
+                listaMarcasFiltradas = listaMarcas;
+            }
+
+            dgvMarcas.DataSource = null;
+            dgvMarcas.DataSource = listaMarcasFiltradas;
+        }
     }
 }
