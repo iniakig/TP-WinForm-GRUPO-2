@@ -105,5 +105,43 @@ namespace negocio
                 datos.CerrarConexion();
             }
         }
+
+        public bool ExistenRegistrosAsociados(Categoria categoria)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            List<int> lista = new List<int>();
+
+            bool existenRegistrosAsociados = false;
+
+            try
+            {
+                datos.SetearConsulta("Select IdCategoria From ARTICULOS");
+                datos.EjecutarLectura();
+
+                while(datos.Lector.Read())
+                {
+                    int idCategoria = (int)datos.Lector["IdCategoria"];
+                    lista.Add(idCategoria);
+                }
+
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    if (lista[i] == categoria.Id)
+                    {
+                        existenRegistrosAsociados = true;
+                    }
+                }
+
+                return existenRegistrosAsociados;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
     }
 }

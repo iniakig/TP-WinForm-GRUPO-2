@@ -74,13 +74,20 @@ namespace winform_app
             try
             {
                 seleccionada = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
-                DialogResult respuesta = MessageBox.Show("¿Querés eliminar marca: " + seleccionada.Nombre + "?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (respuesta == DialogResult.Yes)
+                if (!negocio.ExistenRegistrosAsociados(seleccionada))
                 {
-                    negocio.Eliminar(seleccionada.Id);
-                    MessageBox.Show("Marca eliminada");
-                    CargarVista();
+                    DialogResult respuesta = MessageBox.Show("¿Querés eliminar marca: " + seleccionada.Nombre + "?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (respuesta == DialogResult.Yes)
+                    {
+                        negocio.Eliminar(seleccionada.Id);
+                        MessageBox.Show("Marca eliminada");
+                        CargarVista();
 
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se puede eliminar el registro.\nExisten artículos asociados a la marca que desea eliminar.");
                 }
             }
             catch (Exception ex)

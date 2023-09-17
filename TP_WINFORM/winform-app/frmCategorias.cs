@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
+using Microsoft.Win32;
 using negocio;
 
 namespace winform_app
@@ -75,14 +76,23 @@ namespace winform_app
             try
             {
                 seleccionada = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
-                DialogResult respuesta = MessageBox.Show("¿Querés eliminar categoría: " + seleccionada.Descripcion + "?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (respuesta == DialogResult.Yes)
-                {
-                    negocio.Eliminar(seleccionada.Id);
-                    MessageBox.Show("Categoría eliminada");
-                    CargarVista();
 
+                if (!negocio.ExistenRegistrosAsociados(seleccionada))
+                {
+                    DialogResult respuesta = MessageBox.Show("¿Querés eliminar categoría: " + seleccionada.Descripcion + "?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (respuesta == DialogResult.Yes)
+                    {
+                        negocio.Eliminar(seleccionada.Id);
+                        MessageBox.Show("Categoría eliminada");
+                        CargarVista();
+
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("No se puede eliminar el registro.\nExisten artículos asociados a la categoría que desea eliminar.");
+                }
+                
             }
             catch (Exception ex)
             {

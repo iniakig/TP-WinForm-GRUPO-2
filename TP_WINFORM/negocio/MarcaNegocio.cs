@@ -109,5 +109,43 @@ namespace negocio
                 datos.CerrarConexion();
             }
         }
+        
+        public bool ExistenRegistrosAsociados(Marca marca)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            List<int> lista = new List<int>();
+
+            bool existenRegistrosAsociados = false;
+
+            try
+            {
+                datos.SetearConsulta("Select IdMarca From ARTICULOS");
+                datos.EjecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    int idMarca = (int)datos.Lector["IdMarca"];
+                    lista.Add(idMarca);
+                }
+
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    if (lista[i] == marca.Id)
+                    {
+                        existenRegistrosAsociados = true;
+                    }
+                }
+
+                return existenRegistrosAsociados;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
     }
 }
