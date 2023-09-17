@@ -41,12 +41,12 @@ namespace winform_app
         }
         private void btnGuardarMarca_Click(object sender, EventArgs e)
         {
-            if (txtAgregarMarca.Text != "")
+            if (txtAgregarMarca.Text.Trim() != "")
             {
                 MarcaNegocio negocio = new MarcaNegocio();
                 Marca nuevaMarca = new Marca();
 
-                if (txtAgregarMarca.Text != "")
+                if (txtAgregarMarca.Text.Trim() != "")
                 {
                     try
                     {

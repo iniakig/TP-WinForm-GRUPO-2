@@ -42,12 +42,12 @@ namespace winform_app
 
         private void btnGuardarCategoria_Click(object sender, EventArgs e)
         {
-            if (txtAgregarCategoria.Text != "")
+            if (txtAgregarCategoria.Text.Trim() != "")
             {
                 CategoriaNegocio negocio = new CategoriaNegocio();
                 Categoria nuevaCategoria = new Categoria();
 
-                if (txtAgregarCategoria.Text != "")
+                if (txtAgregarCategoria.Text.Trim() != "")
                 {
                     try
                     {
