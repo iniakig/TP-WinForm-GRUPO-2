@@ -34,7 +34,7 @@
             this.txtAgregarCategoria = new System.Windows.Forms.TextBox();
             this.btnGuardarCategoria = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.lblOtrasAcciones = new System.Windows.Forms.Label();
@@ -103,14 +103,15 @@
             this.txtBuscar.TabIndex = 8;
             this.txtBuscar.Tag = "";
             // 
-            // button1
+            // btnBuscar
             // 
-            this.button1.Location = new System.Drawing.Point(729, 52);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBuscar.Location = new System.Drawing.Point(729, 52);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 9;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnEliminar
             // 
@@ -151,7 +152,7 @@
             this.Controls.Add(this.lblOtrasAcciones);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnGuardarCategoria);
             this.Controls.Add(this.txtAgregarCategoria);
@@ -176,7 +177,7 @@
         private System.Windows.Forms.TextBox txtAgregarCategoria;
         private System.Windows.Forms.Button btnGuardarCategoria;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Label lblOtrasAcciones;

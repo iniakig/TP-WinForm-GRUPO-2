@@ -126,5 +126,23 @@ namespace winform_app
                 }
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            List<Categoria> listaCategoriasFiltradas;
+            string filtro = txtBuscar.Text;
+
+            if (filtro != "")
+            {
+                listaCategoriasFiltradas = listaCategoria.FindAll(x => x.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else
+            {
+                listaCategoriasFiltradas = listaCategoria;
+            }
+
+            dgvCategorias.DataSource = null;
+            dgvCategorias.DataSource = listaCategoriasFiltradas;
+        }
     }
 }
