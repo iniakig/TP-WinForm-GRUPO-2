@@ -24,6 +24,11 @@ namespace winform_app
             InitializeComponent();
         }
 
+        private void OcultarCampos()
+        {
+            dgvArticulos.Columns["UrlImagen"].Visible = false;
+        }
+
         public void CargarVista()
         {
             try
@@ -42,6 +47,7 @@ namespace winform_app
         private void frmArticulos_Load(object sender, EventArgs e)
         {
             CargarVista();
+            OcultarCampos();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -78,6 +84,25 @@ namespace winform_app
         {
             frmAgregarArticulo ventanaAgregarArticulo = new frmAgregarArticulo();
             ventanaAgregarArticulo.ShowDialog();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            List<Articulo> listaArticulosFiltrados;
+            string filtro = txtBuscar.Text;
+
+            if (filtro != "")
+            {
+                listaArticulosFiltrados = listaArticulos.FindAll(x => x.Codigo.ToUpper().Contains(filtro.ToUpper()) || x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Descripcion.ToUpper().Contains(filtro.ToUpper()) || x.Marca.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Categoria.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else
+            {
+                listaArticulosFiltrados = listaArticulos;
+            }
+
+            dgvArticulos.DataSource = null;
+            dgvArticulos.DataSource = listaArticulosFiltrados;
+            OcultarCampos();
         }
     }
 }
