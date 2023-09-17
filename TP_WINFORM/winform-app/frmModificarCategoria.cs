@@ -45,10 +45,17 @@ namespace winform_app
         {
             try
             {
-                CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
-                categoria.Descripcion = txtDescripcion.Text;
-                categoriaNegocio.Modificar(categoria);
-                MessageBox.Show("Registro modificado");
+                if (txtDescripcion.Text == "")
+                {
+                    MessageBox.Show("El campo descripción no puede quedar vacío");
+                }
+                else
+                {
+                    CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+                    categoria.Descripcion = txtDescripcion.Text;
+                    categoriaNegocio.Modificar(categoria);
+                    MessageBox.Show("Registro modificado");
+                }
             }
             catch (Exception ex)
             {
@@ -57,7 +64,14 @@ namespace winform_app
             }
             finally
             {
-                Close();
+                if (txtDescripcion.Text != "")
+                {
+                    Close();
+                }
+                else
+                {
+                    CargarVista();
+                }
             }
         }
 
