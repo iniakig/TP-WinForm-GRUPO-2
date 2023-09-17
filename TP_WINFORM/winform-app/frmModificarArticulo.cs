@@ -15,6 +15,8 @@ namespace winform_app
     public partial class frmModificarArticulo : Form
     {
         private ImagenNegocio imagenNegocio;
+        private List<string> UrlImagenesArticulo;
+        private int IndiceImagen;
         private Articulo articulo;
         public Articulo Articulo
         {
@@ -24,12 +26,13 @@ namespace winform_app
 
         private void CargarImagen()
         {
-            string url = Articulo.UrlImagen;
-            imagenNegocio.CargarImagenDesdeURL(url);
+            UrlImagenesArticulo = imagenNegocio.GetImagenesNegocio(Articulo);
+            imagenNegocio.CargarImagenDesdeURL(UrlImagenesArticulo[IndiceImagen]);
         }
         public frmModificarArticulo(Articulo articuloSender)
         {
             articulo = articuloSender;
+            IndiceImagen = 0;
             InitializeComponent();
         }
 
@@ -40,7 +43,7 @@ namespace winform_app
                 txtCodigo.Text = Articulo.Codigo;
                 txtNombre.Text = Articulo.Nombre;
                 txtDescripcion.Text = Articulo.Descripcion;
-                
+
                 imagenNegocio = new ImagenNegocio(pbxArticulo);
                 CargarImagen();
             }
@@ -60,6 +63,24 @@ namespace winform_app
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnImagenSiguiente_Click(object sender, EventArgs e)
+        {
+            if (IndiceImagen < UrlImagenesArticulo.Count - 1)
+            {
+                IndiceImagen++;
+            }
+            CargarImagen();
+        }
+
+        private void btnImagenAnterior_Click(object sender, EventArgs e)
+        {
+            if (IndiceImagen > 0)
+            {
+                IndiceImagen--;
+            }
+            CargarImagen();
         }
     }
 }

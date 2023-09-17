@@ -21,6 +21,16 @@ namespace negocio
             PictureBox = pictureBox;
         }
 
+        public List<string> GetImagenesNegocio(Articulo articulo)
+        {
+            List<string> ListaImagenes = new List<string>();
+            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+
+            ListaImagenes = articuloNegocio.ListarImagenesPorArticulo(articulo.Codigo);
+
+            return ListaImagenes;
+        }
+
         public void CargarImagenDesdeURL(string url)
         {
             try
@@ -30,13 +40,18 @@ namespace negocio
                 using (MemoryStream ms = new MemoryStream(imageData))
                 {
                     Image image = Image.FromStream(ms);
-                    PictureBox.Image = image;
+                    if (image != null)
+                        PictureBox.Image = image;
+                    else PictureBox.Image = null;
                 }
             }
             catch (Exception ex)
             {
+                PictureBox.Image = null;
                 throw ex;
             }
         }
+
+
     }
 }
