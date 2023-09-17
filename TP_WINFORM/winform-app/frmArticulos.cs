@@ -15,14 +15,9 @@ namespace winform_app
     public partial class frmArticulos : Form
     {
         private List<Articulo> listaArticulos;
+        private Articulo seleccionada;
 
-        private ImagenNegocio imagenNegocio;
 
-        private void CargarImagen()
-        {
-            string url = "https://images.samsung.com/is/image/samsung/co-galaxy-s10-sm-g970-sm-g970fzyjcoo-frontcanaryyellow-thumb-149016542";
-            imagenNegocio.CargarImagenDesdeURL(url);
-        }
 
         public frmArticulos()
         {
@@ -36,8 +31,6 @@ namespace winform_app
                 ArticuloNegocio negocio = new ArticuloNegocio();
                 listaArticulos = negocio.Listar();
                 dgvArticulos.DataSource = listaArticulos;
-                imagenNegocio = new ImagenNegocio(pbxArticulo);
-                CargarImagen();
             }
             catch (Exception ex)
             {
@@ -75,7 +68,9 @@ namespace winform_app
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            frmModificarArticulo ventanaModificarArticulo = new frmModificarArticulo();
+            seleccionada = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+            frmModificarArticulo ventanaModificarArticulo = new frmModificarArticulo(seleccionada);
             ventanaModificarArticulo.ShowDialog();
         }
 

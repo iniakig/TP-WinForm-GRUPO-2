@@ -34,7 +34,7 @@
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.lblMarca = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtDescripcion = new System.Windows.Forms.RichTextBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -44,6 +44,8 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.lblId = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pbxArticulo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // txtPrecio
@@ -98,13 +100,13 @@
             this.lblMarca.TabIndex = 27;
             this.lblMarca.Text = "Marca";
             // 
-            // richTextBox1
+            // txtDescripcion
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(134, 179);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(180, 64);
-            this.richTextBox1.TabIndex = 26;
-            this.richTextBox1.Text = "";
+            this.txtDescripcion.Location = new System.Drawing.Point(134, 179);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(180, 64);
+            this.txtDescripcion.TabIndex = 26;
+            this.txtDescripcion.Text = "";
             // 
             // lblDescripcion
             // 
@@ -155,6 +157,7 @@
             this.btnCancelar.TabIndex = 20;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -182,11 +185,21 @@
             this.textBox1.Size = new System.Drawing.Size(180, 20);
             this.textBox1.TabIndex = 34;
             // 
+            // pbxArticulo
+            // 
+            this.pbxArticulo.Location = new System.Drawing.Point(360, 40);
+            this.pbxArticulo.Name = "pbxArticulo";
+            this.pbxArticulo.Size = new System.Drawing.Size(300, 300);
+            this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxArticulo.TabIndex = 35;
+            this.pbxArticulo.TabStop = false;
+            // 
             // frmModificarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(365, 486);
+            this.ClientSize = new System.Drawing.Size(714, 486);
+            this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.txtPrecio);
@@ -195,7 +208,7 @@
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.lblMarca);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNombre);
@@ -206,6 +219,8 @@
             this.Name = "frmModificarArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Artículo";
+            this.Load += new System.EventHandler(this.frmModificarArticulo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,7 +234,7 @@
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblMarca;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtDescripcion;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
@@ -229,5 +244,6 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox pbxArticulo;
     }
 }
