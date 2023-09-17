@@ -49,7 +49,7 @@ namespace negocio
             try
             {
                 datos.SetearConsulta("Insert into MARCAS(Descripcion) values(@descripcion)");
-                datos.setearParametro("@descripcion", nuevaMarca.Nombre);
+                datos.SetearParametro("@descripcion", nuevaMarca.Nombre);
                 datos.EjecutarAccion();
             }
             catch (Exception ex)
@@ -71,7 +71,7 @@ namespace negocio
             {
 
                 datos.SetearConsulta("Delete From MARCAS Where Id = @id");
-                datos.setearParametro("@id", id);
+                datos.SetearParametro("@id", id);
                 datos.EjecutarAccion();
 
             }
@@ -94,8 +94,8 @@ namespace negocio
             {
 
                 datos.SetearConsulta("update MARCAS set Descripcion = @Descripcion where Id = @Id");
-                datos.setearParametro("@Descripcion", marca.Nombre);
-                datos.setearParametro("@Id", marca.Id);
+                datos.SetearParametro("@Descripcion", marca.Nombre);
+                datos.SetearParametro("@Id", marca.Id);
                 datos.EjecutarAccion();
 
             }

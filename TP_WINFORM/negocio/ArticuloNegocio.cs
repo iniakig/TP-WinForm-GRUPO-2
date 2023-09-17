@@ -48,6 +48,31 @@ namespace negocio
             }
         }
 
+        public void Agregar(Articulo articulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.SetearConsulta("Insert into ARTICULOS(Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) Values(@Codigo, @Nombre, @Descripcion, @IdMarca, @IdCategoria, @Precio)");
+                datos.SetearParametro("@Codigo", articulo.Codigo);
+                datos.SetearParametro("@Nombre", articulo.Nombre);
+                datos.SetearParametro("@Descripcion", articulo.Descripcion);
+                datos.SetearParametro("@IdMarca", articulo.Marca.Id);
+                datos.SetearParametro("@IdCategoria", articulo.Categoria.Id);
+                datos.SetearParametro("@Precio", articulo.Precio);
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+
         public void Eliminar(int id)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -55,7 +80,7 @@ namespace negocio
             try
             {
                 datos.SetearConsulta("delete from ARTICULOS WHERE Id=@id");
-                datos.setearParametro("@id", id);
+                datos.SetearParametro("@id", id);
                 datos.EjecutarAccion();
 
             }

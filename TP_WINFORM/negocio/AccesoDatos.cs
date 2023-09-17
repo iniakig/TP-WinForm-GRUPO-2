@@ -23,11 +23,11 @@ namespace negocio
         {
 
             // Conexión Nahue
-            //conexion = new SqlConnection("server=localhost; database=CATALOGO_P3_DB; integrated security=false; User ID=sa; Password=Outatimerun1985");
+            conexion = new SqlConnection("server=localhost; database=CATALOGO_P3_DB; integrated security=false; User ID=sa; Password=Outatimerun1985");
             // Conexión Iña
             // conexion = new SqlConnection("server=localhost; database=CATALOGO_P3_DB; integrated security=false; User ID=sa; Password=Gloria3279");
             // Conexión Nico
-            conexion = new SqlConnection("server=localhost; database=CATALOGO_P3_DB; integrated security=true");
+            // conexion = new SqlConnection("server=localhost; database=CATALOGO_P3_DB; integrated security=true");
             comando = new SqlCommand();
         }
 
@@ -76,7 +76,7 @@ namespace negocio
             conexion.Close();
         }
 
-        public void setearParametro(string nombre, object valor)
+        public void SetearParametro(string nombre, object valor)
         {
             comando.Parameters.AddWithValue(nombre, valor);
         }

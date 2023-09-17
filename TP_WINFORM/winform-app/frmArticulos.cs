@@ -29,7 +29,7 @@ namespace winform_app
             InitializeComponent();
         }
 
-        private void CargarVista()
+        public void CargarVista()
         {
             try
             {

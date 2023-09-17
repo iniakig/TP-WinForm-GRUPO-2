@@ -45,7 +45,7 @@ namespace negocio
             try
             {
                 datos.SetearConsulta("Insert into CATEGORIAS(Descripcion) values(@descripcion)");
-                datos.setearParametro("@descripcion", nuevaCategoria.Descripcion);
+                datos.SetearParametro("@descripcion", nuevaCategoria.Descripcion);
                 datos.EjecutarAccion();
             }
             catch (Exception ex)
@@ -67,7 +67,7 @@ namespace negocio
             {
 
                 datos.SetearConsulta("Delete From CATEGORIAS Where Id = @id");
-                datos.setearParametro("@id", id);
+                datos.SetearParametro("@id", id);
                 datos.EjecutarAccion();
 
             }
@@ -90,8 +90,8 @@ namespace negocio
             {
 
                 datos.SetearConsulta("update CATEGORIAS set Descripcion = @Descripcion where Id = @Id");
-                datos.setearParametro("@Descripcion", categoria.Descripcion);
-                datos.setearParametro("@Id", categoria.Id);
+                datos.SetearParametro("@Descripcion", categoria.Descripcion);
+                datos.SetearParametro("@Id", categoria.Id);
                 datos.EjecutarAccion();
 
             }

@@ -35,13 +35,14 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtDescripcion = new System.Windows.Forms.RichTextBox();
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.cboMarca = new System.Windows.Forms.ComboBox();
             this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.lblCamposObligatorios = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -61,26 +62,27 @@
             this.btnGuardar.TabIndex = 4;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(45, 69);
+            this.lblCodigo.Location = new System.Drawing.Point(45, 52);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(40, 13);
+            this.lblCodigo.Size = new System.Drawing.Size(53, 13);
             this.lblCodigo.TabIndex = 6;
-            this.lblCodigo.Text = "Código";
+            this.lblCodigo.Text = "Código (*)";
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(128, 66);
+            this.txtCodigo.Location = new System.Drawing.Point(128, 49);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(180, 20);
             this.txtCodigo.TabIndex = 7;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(128, 112);
+            this.txtNombre.Location = new System.Drawing.Point(128, 95);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(180, 20);
             this.txtNombre.TabIndex = 9;
@@ -88,61 +90,61 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(45, 115);
+            this.lblNombre.Location = new System.Drawing.Point(45, 98);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.Size = new System.Drawing.Size(57, 13);
             this.lblNombre.TabIndex = 8;
-            this.lblNombre.Text = "Nombre";
+            this.lblNombre.Text = "Nombre (*)";
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(45, 162);
+            this.lblDescripcion.Location = new System.Drawing.Point(45, 145);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
             this.lblDescripcion.TabIndex = 10;
             this.lblDescripcion.Text = "Descripción";
             // 
-            // richTextBox1
+            // txtDescripcion
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(128, 162);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(180, 64);
-            this.richTextBox1.TabIndex = 12;
-            this.richTextBox1.Text = "";
+            this.txtDescripcion.Location = new System.Drawing.Point(128, 145);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(180, 64);
+            this.txtDescripcion.TabIndex = 12;
+            this.txtDescripcion.Text = "";
             // 
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(45, 252);
+            this.lblMarca.Location = new System.Drawing.Point(45, 235);
             this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(37, 13);
+            this.lblMarca.Size = new System.Drawing.Size(50, 13);
             this.lblMarca.TabIndex = 13;
-            this.lblMarca.Text = "Marca";
+            this.lblMarca.Text = "Marca (*)";
             // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(45, 296);
+            this.lblCategoria.Location = new System.Drawing.Point(45, 279);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(54, 13);
+            this.lblCategoria.Size = new System.Drawing.Size(67, 13);
             this.lblCategoria.TabIndex = 14;
-            this.lblCategoria.Text = "Categoría";
+            this.lblCategoria.Text = "Categoría (*)";
             // 
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(45, 341);
+            this.lblPrecio.Location = new System.Drawing.Point(45, 324);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(37, 13);
+            this.lblPrecio.Size = new System.Drawing.Size(50, 13);
             this.lblPrecio.TabIndex = 15;
-            this.lblPrecio.Text = "Precio";
+            this.lblPrecio.Text = "Precio (*)";
             // 
             // cboMarca
             // 
             this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMarca.FormattingEnabled = true;
-            this.cboMarca.Location = new System.Drawing.Point(128, 249);
+            this.cboMarca.Location = new System.Drawing.Point(128, 232);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(180, 21);
             this.cboMarca.TabIndex = 16;
@@ -151,30 +153,40 @@
             // 
             this.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(128, 293);
+            this.cboCategoria.Location = new System.Drawing.Point(128, 276);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(180, 21);
             this.cboCategoria.TabIndex = 17;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(128, 338);
+            this.txtPrecio.Location = new System.Drawing.Point(128, 321);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(180, 20);
             this.txtPrecio.TabIndex = 18;
+            // 
+            // lblCamposObligatorios
+            // 
+            this.lblCamposObligatorios.AutoSize = true;
+            this.lblCamposObligatorios.Location = new System.Drawing.Point(71, 371);
+            this.lblCamposObligatorios.Name = "lblCamposObligatorios";
+            this.lblCamposObligatorios.Size = new System.Drawing.Size(223, 13);
+            this.lblCamposObligatorios.TabIndex = 19;
+            this.lblCamposObligatorios.Text = "Los campos marcados con (*) son obligatorios";
             // 
             // frmAgregarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(365, 486);
+            this.Controls.Add(this.lblCamposObligatorios);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.cboCategoria);
             this.Controls.Add(this.cboMarca);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.lblMarca);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNombre);
@@ -200,12 +212,13 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblDescripcion;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtDescripcion;
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.ComboBox cboMarca;
         private System.Windows.Forms.ComboBox cboCategoria;
         private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.Label lblCamposObligatorios;
     }
 }
