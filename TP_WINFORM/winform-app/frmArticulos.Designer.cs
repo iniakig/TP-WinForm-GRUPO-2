@@ -37,9 +37,7 @@
             this.lblTituloPrincipal = new System.Windows.Forms.Label();
             this.btnVerDetalle = new System.Windows.Forms.Button();
             this.lblAgregar = new System.Windows.Forms.Button();
-            this.pbxArticulo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnModificar
@@ -132,21 +130,11 @@
             this.lblAgregar.UseVisualStyleBackColor = true;
             this.lblAgregar.Click += new System.EventHandler(this.lblAgregar_Click);
             // 
-            // pbxArticulo
-            // 
-            this.pbxArticulo.Location = new System.Drawing.Point(506, 95);
-            this.pbxArticulo.Name = "pbxArticulo";
-            this.pbxArticulo.Size = new System.Drawing.Size(100, 100);
-            this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxArticulo.TabIndex = 25;
-            this.pbxArticulo.TabStop = false;
-            // 
             // frmArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(825, 590);
-            this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.lblAgregar);
             this.Controls.Add(this.btnVerDetalle);
             this.Controls.Add(this.btnModificar);
@@ -161,7 +149,6 @@
             this.Text = "Gestión de artículos";
             this.Load += new System.EventHandler(this.frmArticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,6 +164,5 @@
         private System.Windows.Forms.Label lblTituloPrincipal;
         private System.Windows.Forms.Button btnVerDetalle;
         private System.Windows.Forms.Button lblAgregar;
-        private System.Windows.Forms.PictureBox pbxArticulo;
     }
 }

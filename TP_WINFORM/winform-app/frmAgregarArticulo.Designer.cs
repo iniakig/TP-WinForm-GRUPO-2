@@ -43,11 +43,13 @@
             this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.lblCamposObligatorios = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(197, 410);
+            this.btnCancelar.Location = new System.Drawing.Point(197, 431);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 5;
@@ -56,7 +58,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(91, 410);
+            this.btnGuardar.Location = new System.Drawing.Point(91, 431);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 4;
@@ -67,7 +69,7 @@
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(45, 52);
+            this.lblCodigo.Location = new System.Drawing.Point(45, 34);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(53, 13);
             this.lblCodigo.TabIndex = 6;
@@ -75,14 +77,14 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(128, 49);
+            this.txtCodigo.Location = new System.Drawing.Point(128, 31);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(180, 20);
             this.txtCodigo.TabIndex = 7;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(128, 95);
+            this.txtNombre.Location = new System.Drawing.Point(128, 77);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(180, 20);
             this.txtNombre.TabIndex = 9;
@@ -90,7 +92,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(45, 98);
+            this.lblNombre.Location = new System.Drawing.Point(45, 80);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(57, 13);
             this.lblNombre.TabIndex = 8;
@@ -99,7 +101,7 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(45, 145);
+            this.lblDescripcion.Location = new System.Drawing.Point(45, 127);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
             this.lblDescripcion.TabIndex = 10;
@@ -107,7 +109,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(128, 145);
+            this.txtDescripcion.Location = new System.Drawing.Point(128, 127);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(180, 64);
             this.txtDescripcion.TabIndex = 12;
@@ -116,7 +118,7 @@
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(45, 235);
+            this.lblMarca.Location = new System.Drawing.Point(45, 217);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(50, 13);
             this.lblMarca.TabIndex = 13;
@@ -125,7 +127,7 @@
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(45, 279);
+            this.lblCategoria.Location = new System.Drawing.Point(45, 261);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(67, 13);
             this.lblCategoria.TabIndex = 14;
@@ -134,7 +136,7 @@
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(45, 324);
+            this.lblPrecio.Location = new System.Drawing.Point(45, 306);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(50, 13);
             this.lblPrecio.TabIndex = 15;
@@ -144,7 +146,7 @@
             // 
             this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMarca.FormattingEnabled = true;
-            this.cboMarca.Location = new System.Drawing.Point(128, 232);
+            this.cboMarca.Location = new System.Drawing.Point(128, 214);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(180, 21);
             this.cboMarca.TabIndex = 16;
@@ -153,14 +155,14 @@
             // 
             this.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(128, 276);
+            this.cboCategoria.Location = new System.Drawing.Point(128, 258);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(180, 21);
             this.cboCategoria.TabIndex = 17;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(128, 321);
+            this.txtPrecio.Location = new System.Drawing.Point(128, 303);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(180, 20);
             this.txtPrecio.TabIndex = 18;
@@ -168,17 +170,37 @@
             // lblCamposObligatorios
             // 
             this.lblCamposObligatorios.AutoSize = true;
-            this.lblCamposObligatorios.Location = new System.Drawing.Point(71, 371);
+            this.lblCamposObligatorios.Location = new System.Drawing.Point(71, 392);
             this.lblCamposObligatorios.Name = "lblCamposObligatorios";
             this.lblCamposObligatorios.Size = new System.Drawing.Size(223, 13);
             this.lblCamposObligatorios.TabIndex = 19;
             this.lblCamposObligatorios.Text = "Los campos marcados con (*) son obligatorios";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(45, 347);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Imágenes";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(128, 342);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Agregar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // frmAgregarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(365, 486);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCamposObligatorios);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.cboCategoria);
@@ -220,5 +242,7 @@
         private System.Windows.Forms.ComboBox cboCategoria;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label lblCamposObligatorios;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -141,9 +141,9 @@ namespace winform_app
             this.lblFooter.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFooter.Location = new System.Drawing.Point(370, 451);
             this.lblFooter.Name = "lblFooter";
-            this.lblFooter.Size = new System.Drawing.Size(426, 21);
+            this.lblFooter.Size = new System.Drawing.Size(431, 21);
             this.lblFooter.TabIndex = 8;
-            this.lblFooter.Text = "Grupo 2 - Actividad 2 - Programación II - TUP - UTN FRGP";
+            this.lblFooter.Text = "Grupo 2 - Actividad 2 - Programación III - TUP - UTN FRGP";
             // 
             // frmMenuPrinc
             // 
@@ -162,7 +162,7 @@ namespace winform_app
             this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.lblTituloPrincipal);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMenuPrinc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de catálogo";
