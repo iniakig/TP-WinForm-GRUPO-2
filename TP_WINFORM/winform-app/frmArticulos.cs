@@ -104,5 +104,21 @@ namespace winform_app
             dgvArticulos.DataSource = listaArticulosFiltrados;
             OcultarCampos();
         }
+
+        private void btnVerDetalle_Click(object sender, EventArgs e)
+        {
+            seleccionada = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+            frmDetalleArticulo ventanaDetalleArticulo = new frmDetalleArticulo(seleccionada);
+            ventanaDetalleArticulo.ShowDialog();
+        }
+
+        private void dgvArticulos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            seleccionada = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+            frmDetalleArticulo ventanaDetalleArticulo = new frmDetalleArticulo(seleccionada);
+            ventanaDetalleArticulo.ShowDialog();
+        }
     }
 }
