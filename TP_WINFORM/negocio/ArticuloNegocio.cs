@@ -50,6 +50,35 @@ namespace negocio
             }
         }
 
+        public int CantidadDeArticulosRegistrados()
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                int CantArticulos;
+                datos.SetearConsulta("select count(Id) CantArticulos from ARTICULOS");
+                datos.EjecutarLectura();
+                if (datos.Lector.Read())
+                {
+                    CantArticulos = Convert.ToInt32(datos.Lector["CantArticulos"]);
+                    return CantArticulos;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+
         public List<string> ListarImagenesPorArticulo(string cod)
         {
             List<string> listaImagenes = new List<string>();
@@ -68,7 +97,7 @@ namespace negocio
 
                     aux.UrlImagen = (string)datos.Lector["ImagenUrl"];
 
-                    if(aux.UrlImagen !=  null)
+                    if (aux.UrlImagen != null)
                         listaImagenes.Add(aux.UrlImagen);
 
                 }
@@ -85,6 +114,64 @@ namespace negocio
             }
         }
 
+        public int BuscarIDArticuloPorCodigo(string CodigoArticulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearConsulta("SELECT COALESCE((SELECT TOP 1 i.IdArticulo FROM IMAGENES i JOIN ARTICULOS a ON a.Id = i.IdArticulo WHERE a.Codigo = @CodArticulo), -1) AS IdArticulo");
+                datos.SetearParametro("@CodArticulo", CodigoArticulo);
+                datos.EjecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    int idArticulo = Convert.ToInt32(datos.Lector["IdArticulo"]);
+
+                    if (idArticulo == -1)
+                    {
+                        return CantidadDeArticulosRegistrados();
+                    }
+                    else
+                    {
+                        return idArticulo;
+                    }
+                }
+                else
+                {
+                    return CantidadDeArticulosRegistrados();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+        public void AgregarImagenArticulo(string CodArticulo, string UrlImagen)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            int idArticulo = BuscarIDArticuloPorCodigo(CodArticulo);
+            try
+            {
+                datos.SetearConsulta("insert into IMAGENES (IdArticulo, ImagenUrl) values (@CodArticulo, @UrlImagen)");
+                datos.SetearParametro("@CodArticulo", idArticulo);
+                datos.SetearParametro("@UrlImagen", UrlImagen);
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+
+        }
+
         public void Agregar(Articulo articulo)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -99,6 +186,8 @@ namespace negocio
                 datos.SetearParametro("@IdCategoria", articulo.Categoria.Id);
                 datos.SetearParametro("@Precio", articulo.Precio);
                 datos.EjecutarAccion();
+                if (articulo.UrlImagen != null || articulo.UrlImagen != "")
+                    AgregarImagenArticulo(articulo.Codigo, articulo.UrlImagen);
             }
             catch (Exception ex)
             {
@@ -107,6 +196,8 @@ namespace negocio
             finally
             {
                 datos.CerrarConexion();
+                //if (articulo.UrlImagen != null || articulo.UrlImagen != "")
+                //    AgregarImagenArticulo(articulo.Codigo, articulo.UrlImagen);
             }
         }
 

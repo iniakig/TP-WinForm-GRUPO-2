@@ -50,7 +50,8 @@ namespace winform_app
                     articulo.Marca = (Marca)cboMarca.SelectedItem;
                     articulo.Categoria = (Categoria)cboCategoria.SelectedItem;
                     articulo.Precio = decimal.Parse(txtPrecio.Text);
-                    
+                    articulo.UrlImagen = txtImagen.Text;
+
 
                     articuloNegocio.Agregar(articulo);
 

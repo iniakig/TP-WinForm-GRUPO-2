@@ -43,6 +43,8 @@
             this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.lblCamposObligatorios = new System.Windows.Forms.Label();
+            this.txtImagen = new System.Windows.Forms.TextBox();
+            this.lblImagen = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -174,11 +176,29 @@
             this.lblCamposObligatorios.TabIndex = 19;
             this.lblCamposObligatorios.Text = "Los campos marcados con (*) son obligatorios";
             // 
+            // txtImagen
+            // 
+            this.txtImagen.Location = new System.Drawing.Point(128, 345);
+            this.txtImagen.Name = "txtImagen";
+            this.txtImagen.Size = new System.Drawing.Size(180, 20);
+            this.txtImagen.TabIndex = 21;
+            // 
+            // lblImagen
+            // 
+            this.lblImagen.AutoSize = true;
+            this.lblImagen.Location = new System.Drawing.Point(45, 348);
+            this.lblImagen.Name = "lblImagen";
+            this.lblImagen.Size = new System.Drawing.Size(42, 13);
+            this.lblImagen.TabIndex = 20;
+            this.lblImagen.Text = "Imagen";
+            // 
             // frmAgregarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(365, 486);
+            this.Controls.Add(this.txtImagen);
+            this.Controls.Add(this.lblImagen);
             this.Controls.Add(this.lblCamposObligatorios);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.cboCategoria);
@@ -220,5 +240,7 @@
         private System.Windows.Forms.ComboBox cboCategoria;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label lblCamposObligatorios;
+        private System.Windows.Forms.TextBox txtImagen;
+        private System.Windows.Forms.Label lblImagen;
     }
 }
